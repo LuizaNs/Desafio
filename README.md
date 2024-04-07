@@ -1,1 +1,1 @@
-# Desafio
+# Solução do desafio proposto para a obtenção parcial da nota do 2° checkpoint de Mobile. 

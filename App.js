@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Adicionar from './src/screens/Adicionar';
+import Listar from './src/screens/Listar';
+import Excluir from './src/screens/Excluir';
 
-export default function App() {
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="AdicionarInformação">
+        <Stack.Screen name="AdicionarInformações" component={Adicionar} options={{ title: 'Adicionar Informações' }} />
+        <Stack.Screen name="ListarInformações" component={Listar} options={{ title: 'Listar Informações' }} />
+        <Stack.Screen name="ExcluirInformações" component={Excluir} options={{ title: 'Excluir Informações' }} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
+
